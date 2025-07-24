@@ -118,25 +118,53 @@ async function playRaceEngine(character1, character2) {
         character2.PODER
       );
 
+      // Função para sortear penalidade: casco (-1) ou bomba (-2)
+      function sorteiaPenalidade() {
+        return Math.random() < 0.5
+          ? { tipo: "casco", valor: 1 }
+          : { tipo: "bomba", valor: 2 };
+      }
+
+      // Função para sortear turbo (+1 ponto)
+      function sorteiaTurbo() {
+        return Math.random() < 0.5;
+      }
+
       if (powerResult1 > powerResult2 && character2.PONTOS > 0) {
+        const penalidade = sorteiaPenalidade();
+        const pontosPerdidos = Math.min(penalidade.valor, character2.PONTOS);
+        character2.PONTOS -= pontosPerdidos;
         console.log(
-          `${character1.NOME} venceu o confronto! ${character2.NOME} perdeu 1 ponto 🐢`
+          `${character1.NOME} venceu o confronto! ${character2.NOME} perdeu ${pontosPerdidos} ponto(s) (${
+            penalidade.tipo === "casco" ? "🐢 Casco" : "💣 Bomba"
+          })`
         );
-        character2.PONTOS--;
+        // Turbo aleatório para o vencedor
+        if (sorteiaTurbo()) {
+          character1.PONTOS++;
+          console.log(`${character1.NOME} ganhou um TURBO! (+1 ponto) 🚀`);
+        }
       }
 
       if (powerResult2 > powerResult1 && character1.PONTOS > 0) {
+        const penalidade = sorteiaPenalidade();
+        const pontosPerdidos = Math.min(penalidade.valor, character1.PONTOS);
+        character1.PONTOS -= pontosPerdidos;
         console.log(
-          `${character2.NOME} venceu o confronto! ${character1.NOME} perdeu 1 ponto 🐢`
+          `${character2.NOME} venceu o confronto! ${character1.NOME} perdeu ${pontosPerdidos} ponto(s) (${
+            penalidade.tipo === "casco" ? "🐢 Casco" : "💣 Bomba"
+          })`
         );
-        character1.PONTOS--;
+        // Turbo aleatório para o vencedor
+        if (sorteiaTurbo()) {
+          character2.PONTOS++;
+          console.log(`${character2.NOME} ganhou um TURBO! (+1 ponto) 🚀`);
+        }
       }
 
-      console.log(
-        powerResult2 === powerResult1
-          ? "Confronto empatado! Nenhum ponto foi perdido"
-          : ""
-      );
+      if (powerResult1 === powerResult2) {
+        console.log("Confronto empatado! Nenhum ponto foi perdido");
+      }
     }
 
     // verificando o vencedor
