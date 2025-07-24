@@ -12,7 +12,7 @@ Aqui está o que eu aprendi de verdade.
 Antes, minha tendência seria criar um arquivo gigante e jogar toda a lógica lá dentro. Neste projeto, eu senti na pele o poder de quebrar o problema em pedaços. Criei módulos para:
 - **`itens`**: Gerenciar os produtos.
 - **`carrinho`**: Cuidar das ações como adicionar, remover e calcular.
-- **`util's`**: Funções auxiliares para formatar preços, etc.
+- **`utils`**: Funções auxiliares para formatar preços, etc.
 
 **O que eu aprendi:** Código modular não é só "organizado", é mais fácil de testar, de dar manutenção e de entender meses depois. Cada "peça" tem sua responsabilidade, e isso muda o jogo.
 
