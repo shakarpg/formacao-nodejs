@@ -5,7 +5,6 @@ Este projeto representa a implementação bem-sucedida de um kit de utilidades e
 
 A estrutura do projeto foi pensada para ser modular e de fácil manutenção, aplicando conceitos de arquitetura em camadas para separar responsabilidades e garantir a qualidade do código.
 
-\<br\>
 
 ## 🎓 Conhecimentos Adquiridos e Aplicados
 
@@ -33,7 +32,7 @@ Ao longo deste projeto, consolidamos e aplicamos habilidades essenciais do ecoss
 
   - Configuramos e utilizamos o pacote `dotenv` para gerenciar variáveis de ambiente de forma segura, evitando a exposição de dados sensíveis (como chaves de API ou portas de servidor) diretamente no código.
 
-\<br\>
+
 
 ## ✨ Funcionalidades Desenvolvidas
 
@@ -45,7 +44,7 @@ Atualmente, o kit de utilidades conta com as seguintes features:
       - Validação e aplicação de cupons de desconto.
       - Geração de boletos ou notas fiscais em PDF.
 
-\<br\>
+
 
 ## 🚀 Resultados e Próximos Passos
 
